@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - ShopEasy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="navbar"></header>
+<main>
+<div class="container page"><div id="checkout-box">
+  <h1 style="margin-bottom:16px">Checkout</h1>
+  <div class="two-col">
+    <form class="card" id="checkout-form">
+      <h2>Delivery details</h2>
+      <div id="form-alert" class="alert"></div>
+      <div class="form-grid">
+        <div class="field"><label for="customer_name">Full name</label><input id="customer_name" required minlength="2"></div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" required></div>
+        <div class="field"><label for="phone">Phone (10 digits)</label><input id="phone" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric"></div>
+        <div class="field"><label for="pincode">Pincode (6 digits)</label><input id="pincode" required pattern="[0-9]{6}" maxlength="6" inputmode="numeric"></div>
+        <div class="field full"><label for="address">Address</label><textarea id="address" rows="2" required minlength="5"></textarea></div>
+        <div class="field"><label for="city">City</label><input id="city" required></div>
+        <div class="field"><label for="state">State</label><input id="state" required></div>
+      </div>
+      <h2 style="margin-top:6px">Payment</h2>
+      <label class="radio-row"><input type="radio" name="payment" value="Cash on Delivery" checked> Cash on Delivery</label>
+      <label class="radio-row"><input type="radio" name="payment" value="Demo Payment"> Demo Payment (no real charge)</label>
+      <button class="btn btn-block" id="place-btn" type="submit" style="margin-top:10px">Place order</button>
+    </form>
+    <div class="card"><h2>Your order</h2><div id="summary-items"></div>
+      <div class="summary-row summary-total"><span>Total</span><span id="summary-total"></span></div></div>
+  </div>
+</div></div>
+</main>
+<footer id="footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

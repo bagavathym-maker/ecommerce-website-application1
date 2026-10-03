@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - ShopEasy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="navbar"></header>
+<main>
+<div class="container page" id="admin-root">
+  <h1>Admin dashboard</h1><p class="muted" style="margin-bottom:18px">Manage products and orders.</p>
+  <div class="stats" id="stats"></div>
+  <div class="tabs"><button class="tab active" data-tab="products">Products</button><button class="tab" data-tab="orders">Orders</button></div>
+
+  <section id="tab-products">
+    <div class="section-head"><h2>All products</h2><button class="btn" id="add-product">+ Add product</button></div>
+    <div class="table-wrap" id="products-table"></div>
+  </section>
+  <section id="tab-orders" hidden>
+    <div class="section-head"><h2>All orders</h2></div>
+    <div class="table-wrap" id="orders-table"></div>
+  </section>
+
+  <dialog id="product-dialog">
+    <h2 id="dialog-title">Add product</h2>
+    <div id="dialog-alert" class="alert"></div>
+    <form id="product-form">
+      <input type="hidden" id="p-id">
+      <div class="field"><label for="p-name">Name</label><input id="p-name" required maxlength="150"></div>
+      <div class="field"><label for="p-desc">Description</label><textarea id="p-desc" rows="3"></textarea></div>
+      <div class="form-grid">
+        <div class="field"><label for="p-price">Price (₹)</label><input type="number" id="p-price" min="0" step="0.01" required></div>
+        <div class="field"><label for="p-stock">Stock</label><input type="number" id="p-stock" min="0" step="1" required></div>
+        <div class="field"><label for="p-category">Category</label><input id="p-category" required maxlength="50" list="cat-list"><datalist id="cat-list"><option>Electronics</option><option>Fashion</option><option>Home</option><option>Books</option><option>Sports</option></datalist></div>
+        <div class="field"><label for="p-image">Image path or URL</label><input id="p-image" placeholder="images/p1.svg or https://..."></div>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:flex-end">
+        <button type="button" class="btn btn-outline" id="cancel-dialog">Cancel</button>
+        <button type="submit" class="btn">Save</button>
+      </div>
+    </form>
+  </dialog>
+</div>
+</main>
+<footer id="footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

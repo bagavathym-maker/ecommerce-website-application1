@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - ShopEasy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="navbar"></header>
+<main>
+<div class="container"><div class="card auth-card">
+  <h1>Create account</h1><p class="muted" style="margin-bottom:18px">Join to start shopping.</p>
+  <div id="form-alert" class="alert"></div>
+  <form id="register-form">
+    <div class="field"><label for="name">Full name</label><input id="name" required minlength="2" maxlength="100" autocomplete="name"></div>
+    <div class="field"><label for="email">Email</label><input type="email" id="email" required autocomplete="email"></div>
+    <div class="field"><label for="password">Password (min 6 characters)</label><input type="password" id="password" required minlength="6" autocomplete="new-password"></div>
+    <div class="field"><label for="confirm">Confirm password</label><input type="password" id="confirm" required minlength="6" autocomplete="new-password"></div>
+    <button class="btn btn-block" type="submit">Create account</button>
+  </form>
+  <p class="center muted" style="margin-top:16px">Already registered? <a href="login.html">Login</a></p>
+</div></div>
+</main>
+<footer id="footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
